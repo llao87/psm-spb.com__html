@@ -21,19 +21,19 @@
 
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="logo" href="index.html">
+      <a class="logo" href="index.php">
         <span class="logo__mark" aria-hidden="true"></span>
         <span class="logo__text">Петроспец<span>монтаж</span></span>
       </a>
       <nav class="nav" id="nav" aria-label="Основное меню">
         <ul class="nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html" aria-current="page">Контакты</a></li>
+          <li><a href="index.php">Главная</a></li>
+          <li><a href="services.php">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php" aria-current="page">Контакты</a></li>
         </ul>
         <a class="btn btn--primary nav__cta" href="#request">Оставить заявку</a>
       </nav>
@@ -77,7 +77,7 @@
               <textarea class="lead-form__field" id="contactMsg" name="message" placeholder="Тип объекта, площадь, сроки"></textarea>
               <label class="lead-form__check">
                 <input type="checkbox" id="contactPdConsent" name="pd_consent" value="1" required>
-                <span>Ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных</a> и даю <a href="consent.html" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span>
+                <span>Ознакомлен(а) с <a href="privacy.php" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных</a> и даю <a href="consent.php" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span>
               </label>
               <div class="form-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
               <button class="btn btn--primary btn--block" type="submit">Отправить заявку</button>
@@ -122,19 +122,19 @@
       <div>
         <h3 class="footer__heading">Меню</h3>
         <ul class="footer__links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.php">Главная</a></li>
+          <li><a href="services.php">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php">Контакты</a></li>
         </ul>
       </div>
       <div>
         <h3 class="footer__heading">Контакты</h3>
         <ul class="footer__links">
-          <li><a href="contacts.html">Производство и офис</a></li>
+          <li><a href="contacts.php">Производство и офис</a></li>
           <li>192019, СПб, вн. тер. «Невская Застава», ул. Хрустальная, 18, лит. А, пом. 411</li>
           <li><a href="tel:+78124561546">+7 (812) 456-15-46</a></li>
           <li><a href="mailto:petrospecmontag@mail.ru">petrospecmontag@mail.ru</a></li>
@@ -144,9 +144,9 @@
         <h3 class="footer__heading">Соцсети</h3>
         <a class="footer__social" href="#" rel="noopener noreferrer">ВКонтакте</a>
         <p class="footer__legal">
-          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="privacy.php">Политика конфиденциальности</a>
           ·
-          <a href="consent.html">Согласие на обработку персональных данных</a>
+          <a href="consent.php">Согласие на обработку персональных данных</a>
         </p>
         <p class="footer__copy">© <span id="year"></span> ООО «Петроспецмонтаж»</p>
       </div>

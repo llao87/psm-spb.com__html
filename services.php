@@ -21,21 +21,21 @@
 
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="logo" href="index.html">
+      <a class="logo" href="index.php">
         <span class="logo__mark" aria-hidden="true"></span>
         <span class="logo__text">Петроспец<span>монтаж</span></span>
       </a>
       <nav class="nav" id="nav" aria-label="Основное меню">
         <ul class="nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="services.html" aria-current="page">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.php">Главная</a></li>
+          <li><a href="services.php" aria-current="page">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php">Контакты</a></li>
         </ul>
-        <a class="btn btn--primary nav__cta" href="contacts.html#request">Оставить заявку</a>
+        <a class="btn btn--primary nav__cta" href="contacts.php#request">Оставить заявку</a>
       </nav>
       <button class="burger" type="button" id="burger" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню">
         <span></span><span></span><span></span>
@@ -55,7 +55,7 @@
     <section class="section activity">
       <div class="container">
         <div class="cards">
-          <a class="card card--service card--reveal" href="service-design.html">
+          <a class="card card--service card--reveal" href="service-design.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Инженеры с проектной документацией на строительной площадке" loading="lazy" decoding="async">
             </div>
@@ -64,7 +64,7 @@
               <p class="card__text">Обследования, ПД и РД, дизайн-проекты, сметы, генпроектирование.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-external-networks.html">
+          <a class="card card--service card--reveal" href="service-external-networks.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Инженер в каске на промышленном объекте, инженерные коммуникации" loading="lazy" decoding="async">
             </div>
@@ -73,7 +73,7 @@
               <p class="card__text">Электроснабжение, связь, теплотрассы, наружное освещение, водопровод и канализация.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-mep-internal.html">
+          <a class="card card--service card--reveal" href="service-mep-internal.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Электромонтаж и слаботочные системы" loading="lazy" decoding="async">
             </div>
@@ -82,7 +82,7 @@
               <p class="card__text">Водоснабжение и канализация, отопление, вентиляция и кондиционирование, СКС, ОПС, СКУД.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-construction.html">
+          <a class="card card--service card--reveal" href="service-construction.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Строительная площадка и монтаж конструкций" loading="lazy" decoding="async">
             </div>
@@ -91,7 +91,7 @@
               <p class="card__text">СМР, подземные сооружения, генподряд, малые формы, гидроизоляция конструкций.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-restoration.html">
+          <a class="card card--service card--reveal" href="service-restoration.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Фасад исторического здания, реставрация" loading="lazy" decoding="async">
             </div>
@@ -100,7 +100,7 @@
               <p class="card__text">Памятники архитектуры, капремонт и реконструкция зданий.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-fitout.html">
+          <a class="card card--service card--reveal" href="service-fitout.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Современный интерьер после отделки" loading="lazy" decoding="async">
             </div>
@@ -109,7 +109,7 @@
               <p class="card__text">Жилые и загородные дома, офисы, торговые и HoReCa-пространства.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-landscape.html">
+          <a class="card card--service card--reveal" href="service-landscape.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Благоустройство: дорожки и озеленение" loading="lazy" decoding="async">
             </div>
@@ -118,7 +118,7 @@
               <p class="card__text">Стены и перекрытия, кровля, благоустройство прилегающей территории.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-roads.html">
+          <a class="card card--service card--reveal" href="service-roads.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Дорога и тротуарное покрытие" loading="lazy" decoding="async">
             </div>
@@ -127,7 +127,7 @@
               <p class="card__text">Мощение, тротуарная плитка, асфальтирование, ограждения.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-facade.html">
+          <a class="card card--service card--reveal" href="service-facade.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Современный фасад здания" loading="lazy" decoding="async">
             </div>
@@ -136,7 +136,7 @@
               <p class="card__text">Строительный и монтажный фасад, штукатурка и финишная отделка.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-bank-fire.html">
+          <a class="card card--service card--reveal" href="service-bank-fire.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Работа с проектной и финансовой документацией" loading="lazy" decoding="async">
             </div>
@@ -145,7 +145,7 @@
               <p class="card__text">Перепрофилирование, кассовые блоки, ПП заполнения проёмов.</p>
             </div>
           </a>
-          <a class="card card--service card--reveal" href="service-social.html">
+          <a class="card card--service card--reveal" href="service-social.php">
             <div class="card__media">
               <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" width="800" height="500" alt="Жилая застройка и благоустройство двора" loading="lazy" decoding="async">
             </div>
@@ -155,7 +155,7 @@
             </div>
           </a>
         </div>
-        <p class="section-note">Нужна консультация по конкретному объекту? <a href="contacts.html#request">Напишите или позвоните</a> — подберём состав работ.</p>
+        <p class="section-note">Нужна консультация по конкретному объекту? <a href="contacts.php#request">Напишите или позвоните</a> — подберём состав работ.</p>
       </div>
     </section>
   </main>
@@ -169,19 +169,19 @@
       <div>
         <h3 class="footer__heading">Меню</h3>
         <ul class="footer__links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.php">Главная</a></li>
+          <li><a href="services.php">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php">Контакты</a></li>
         </ul>
       </div>
       <div>
         <h3 class="footer__heading">Контакты</h3>
         <ul class="footer__links">
-          <li><a href="contacts.html">Производство и офис</a></li>
+          <li><a href="contacts.php">Производство и офис</a></li>
           <li>192019, СПб, вн. тер. «Невская Застава», ул. Хрустальная, 18, лит. А, пом. 411</li>
           <li><a href="tel:+78124561546">+7 (812) 456-15-46</a></li>
           <li><a href="mailto:petrospecmontag@mail.ru">petrospecmontag@mail.ru</a></li>
@@ -191,9 +191,9 @@
         <h3 class="footer__heading">Соцсети</h3>
         <a class="footer__social" href="#" rel="noopener noreferrer">ВКонтакте</a>
         <p class="footer__legal">
-          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="privacy.php">Политика конфиденциальности</a>
           ·
-          <a href="consent.html">Согласие на обработку персональных данных</a>
+          <a href="consent.php">Согласие на обработку персональных данных</a>
         </p>
         <p class="footer__copy">© <span id="year"></span> ООО «Петроспецмонтаж»</p>
       </div>

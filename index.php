@@ -21,19 +21,19 @@
 
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="logo" href="index.html">
+      <a class="logo" href="index.php">
         <span class="logo__mark" aria-hidden="true"></span>
         <span class="logo__text">Петроспец<span>монтаж</span></span>
       </a>
       <nav class="nav" id="nav" aria-label="Основное меню">
         <ul class="nav__list">
-          <li><a href="index.html" aria-current="page">Главная</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.php" aria-current="page">Главная</a></li>
+          <li><a href="services.php">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php">Контакты</a></li>
         </ul>
         <button type="button" class="btn btn--primary nav__cta" onclick="document.querySelector('.service-lead').hidden = false; document.querySelector('#page-cb-index-phone').focus(); return false;">Оставить заявку</button>
       </nav>
@@ -69,8 +69,8 @@
               <h1 class="hero-fs__title">Наружные инженерные сети  <br>в&nbsp;Санкт-Петербурге и ЛО</h1>
               <p class="hero-fs__lead">наружные электрические сети, наружные сети связи, тепловые сети, внешнее освещение, наружные сети водоснабжения и водоотведения.</p>
               <div class="hero-fs__actions">
-                <a class="btn btn--primary" href="contacts.html#request">Рассчитать смету</a>
-                <a class="btn btn--ghost btn--on-dark" href="services.html">Смотреть услуги</a>
+                <a class="btn btn--primary" href="contacts.php#request">Рассчитать смету</a>
+                <a class="btn btn--ghost btn--on-dark" href="services.php">Смотреть услуги</a>
               </div>
             </div>
           </li>
@@ -89,8 +89,8 @@
               <h2 class="hero-fs__title">Благоустройство и&nbsp;дорожное&nbsp;строительство <br>в&nbsp;Санкт-Петербурге и ЛО</h2>
               <p class="hero-fs__lead">мощение дорог, укладка тротуарной плитки, асфальтирование дорог, кровельные работы, ограждение территории</p>
               <div class="hero-fs__actions">
-                <a class="btn btn--primary" href="contacts.html#request">Оставить заявку</a>
-                <a class="btn btn--ghost btn--on-dark" href="services.html">Каталог услуг</a>
+                <a class="btn btn--primary" href="contacts.php#request">Оставить заявку</a>
+                <a class="btn btn--ghost btn--on-dark" href="services.php">Каталог услуг</a>
               </div>
             </div>
           </li>
@@ -109,8 +109,8 @@
               <h2 class="hero-fs__title">Загородное строительство</h2>
               <p class="hero-fs__lead">ландшафтные работы, работы нулевого цикла, возведение стен и&nbsp;перекрытий, кровельные работы, благоустройство территории</p>
               <div class="hero-fs__actions">
-                <a class="btn btn--primary" href="projects.html">Наши объекты</a>
-                <a class="btn btn--ghost btn--on-dark" href="about.html">О компании</a>
+                <a class="btn btn--primary" href="projects.php">Наши объекты</a>
+                <a class="btn btn--ghost btn--on-dark" href="about.php">О компании</a>
               </div>
             </div>
           </li>
@@ -175,7 +175,7 @@
           <div class="legal__article about-block about-split__text">
             <h2 class="section__title">О нас</h2>
             <p>Фиксируем объём и сроки в договоре, ведём журнал работ и прозрачную отчётность по смете. На крупных объектах назначаем единого менеджера проекта как точку входа для заказчика.</p>
-            <p>География — Санкт-Петербург и Ленинградская область; отдельные направления возможны по согласованию. <a href="about.html">Подробнее о компании</a></p>
+            <p>География — Санкт-Петербург и Ленинградская область; отдельные направления возможны по согласованию. <a href="about.php">Подробнее о компании</a></p>
           </div>
           <div class="legal__article about-split__media">
             <div class="about-split__figure-wrap">
@@ -193,17 +193,17 @@
           <p class="section__intro">Выберите раздел — подробности на отдельных страницах.</p>
         </header>
         <div class="preview__grid">
-          <a class="preview__card card--reveal" href="services.html">
+          <a class="preview__card card--reveal" href="services.php">
             <h2>Услуги</h2>
             <p>Проектирование, инженерия, строительство, фасады, благоустройство и другое.</p>
             <span class="preview__more">Перейти →</span>
           </a>
-          <a class="preview__card card--reveal" href="projects.html">
+          <a class="preview__card card--reveal" href="projects.php">
             <h2>Объекты</h2>
             <p>Примеры реализованных проектов для бизнеса, частных заказчиков и госсектора.</p>
             <span class="preview__more">Перейти →</span>
           </a>
-          <a class="preview__card card--reveal" href="about.html">
+          <a class="preview__card card--reveal" href="about.php">
             <h2>О компании</h2>
             <p>Опыт, отзывы, партнёры и принципы работы команды.</p>
             <span class="preview__more">Перейти →</span>
@@ -219,22 +219,22 @@
             <h2 class="section__title">Новости</h2>
             <p class="section__intro">Заметки для заказчиков и короткие отчёты с площадок.</p>
           </div>
-          <a class="btn btn--ghost" href="news.html">Все материалы</a>
+          <a class="btn btn--ghost" href="news.php">Все материалы</a>
         </header>
         <div class="teasers">
-          <a class="teaser card--reveal" href="news-smeta-dva-chasa.html">
+          <a class="teaser card--reveal" href="news-smeta-dva-chasa.php">
             <span class="teaser__label">18 марта · Сервис</span>
             <h3 class="teaser__title">Предварительная смета за два часа</h3>
             <p class="teaser__text">Как считаем ориентир без визита и когда нужен выезд инженера.</p>
             <span class="teaser__more">Читать</span>
           </a>
-          <a class="teaser card--reveal" href="news-fasad-zimoy.html">
+          <a class="teaser card--reveal" href="news-fasad-zimoy.php">
             <span class="teaser__label">6 февраля · Фасады</span>
             <h3 class="teaser__title">Фасадные работы зимой</h3>
             <p class="teaser__text">Температура, хранение материалов и приёмка слоёв.</p>
             <span class="teaser__more">Читать</span>
           </a>
-          <a class="teaser card--reveal" href="news-blagoustroystvo-etapy.html">
+          <a class="teaser card--reveal" href="news-blagoustroystvo-etapy.php">
             <span class="teaser__label">22 января · Благоустройство</span>
             <h3 class="teaser__title">Этапы благоустройства</h3>
             <p class="teaser__text">От подготовки участка до приёмки покрытий.</p>
@@ -264,7 +264,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Вставляем содержимое формы
-      fetch('includes/form-service-lead.html')
+      fetch('includes/form-service-lead.php')
         .then(response => response.text())
         .then(html => {
           document.body.insertAdjacentHTML('beforeend', html);
@@ -326,19 +326,19 @@
       <div>
         <h3 class="footer__heading">Меню</h3>
         <ul class="footer__links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.php">Главная</a></li>
+          <li><a href="services.php">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php">Контакты</a></li>
         </ul>
       </div>
       <div>
         <h3 class="footer__heading">Контакты</h3>
         <ul class="footer__links">
-          <li><a href="contacts.html">Производство и офис</a></li>
+          <li><a href="contacts.php">Производство и офис</a></li>
           <li>192019, СПб, вн. тер. «Невская Застава», ул. Хрустальная, 18, лит. А, пом. 411</li>
           <li><a href="tel:+78124561546">+7 (812) 456-15-46</a></li>
           <li><a href="mailto:petrospecmontag@mail.ru">petrospecmontag@mail.ru</a></li>
@@ -348,9 +348,9 @@
         <h3 class="footer__heading">Соцсети</h3>
         <a class="footer__social" href="#" rel="noopener noreferrer">ВКонтакте</a>
         <p class="footer__legal">
-          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="privacy.php">Политика конфиденциальности</a>
           ·
-          <a href="consent.html">Согласие на обработку персональных данных</a>
+          <a href="consent.php">Согласие на обработку персональных данных</a>
         </p>
         <p class="footer__copy">© <span id="year"></span> ООО «Петроспецмонтаж»</p>
       </div>

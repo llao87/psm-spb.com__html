@@ -407,7 +407,7 @@
     apply();
   })();
 
-  /* Объекты: попап с галереей, «AJAX» при клике (projects.html) */
+  /* Объекты: попап с галереей, «AJAX» при клике (projects.php) */
   (function initProjectGalleryModal() {
     var modal = document.getElementById("projectGalleryModal");
     if (!modal) return;

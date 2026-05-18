@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Социальные объекты — услуги Петроспецмонтаж</title>
-  <meta name="description" content="Содержание территорий, планировка и комплексная застройка дворовых пространств.">
+  <title>Дороги и благоустройство — услуги Петроспецмонтаж</title>
+  <meta name="description" content="Мощение, асфальтирование, тротуарная плитка и ограждения.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap" rel="stylesheet">
@@ -21,21 +21,21 @@
 
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="logo" href="index.html">
+      <a class="logo" href="index.php">
         <span class="logo__mark" aria-hidden="true"></span>
         <span class="logo__text">Петроспец<span>монтаж</span></span>
       </a>
       <nav class="nav" id="nav" aria-label="Основное меню">
         <ul class="nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.php">Главная</a></li>
+          <li><a href="services.php">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php">Контакты</a></li>
         </ul>
-        <a class="btn btn--primary nav__cta" href="contacts.html#request">Оставить заявку</a>
+        <a class="btn btn--primary nav__cta" href="contacts.php#request">Оставить заявку</a>
       </nav>
       <button class="burger" type="button" id="burger" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню">
         <span></span><span></span><span></span>
@@ -46,27 +46,27 @@
   <main class="article">
     <header class="article-cover">
       <div class="article-cover__media" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;w=1600&amp;h=700&amp;q=80" width="1600" height="700" alt="Социальная и жилая инфраструктура" fetchpriority="high" decoding="async">
+        <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&amp;fit=crop&amp;w=1600&amp;h=700&amp;q=80" width="1600" height="700" alt="Дороги, мощение и благоустройство" fetchpriority="high" decoding="async">
       </div>
       <div class="article-cover__shade" aria-hidden="true"></div>
       <div class="article-cover__content container">
         <nav class="breadcrumb" aria-label="Навигация по сайту">
-          <a href="index.html">Главная</a><span>/</span><a href="services.html">Услуги</a><span>/</span><span>Соцобъекты</span>
+          <a href="index.php">Главная</a><span>/</span><a href="services.php">Услуги</a><span>/</span><span>Дороги</span>
         </nav>
-        <h1 class="article-cover__title">Социальные и дворовые объекты</h1>
+        <h1 class="article-cover__title">Дороги и благоустройство территории</h1>
       </div>
     </header>
 
     <section class="section section--article">
       <div class="container article__inner">
-        <p class="article__lead">ООО «Петроспецмонтаж» выполняет работы по направлению «Социальные объекты» в Санкт-Петербурге и Ленинградской области. Ниже — кратко о составе услуги и как с нами связаться.</p>
+        <p class="article__lead">ООО «Петроспецмонтаж» выполняет работы по направлению «Дороги и благоустройство» в Санкт-Петербурге и Ленинградской области. Ниже — кратко о составе услуги и как с нами связаться.</p>
         <div class="article__body">
-          <h2>Формат</h2>
-          <p>Благоустройство дворовых территорий, детские и спортивные площадки, зоны отдыха по типовым и индивидуальным решениям.</p>
-          <h2>Участие</h2>
-          <p>Работаем в составе инициативных групп и подрядчиков управляющих компаний с понятной отчётностью.</p>
+          <h2>Покрытия</h2>
+          <p>Устройство оснований, укладка плитки и асфальтобетона, ливневая воронка и водоотвод по проекту.</p>
+          <h2>Ограждения</h2>
+          <p>Поставка и монтаж ограждений, въездные группы и пешеходные зоны.</p>
         </div>
-        <p class="article__foot"><a href="services.html">← Все услуги</a></p>
+        <p class="article__foot"><a href="services.php">← Все услуги</a></p>
       </div>
     </section>
   </main>
@@ -77,15 +77,15 @@
           <h2 id="service-lead-title">Заказать обратный звонок</h2>
           <p class="contact-card__intro">Укажите телефон и при необходимости кратко опишите задачу — менеджер свяжется с вами в рабочее время.</p>
           <form class="lead-form lead-form--stack js-lead-form" novalidate>
-            <label class="sr-only" for="svc-service-social-name">Имя</label>
-            <input class="lead-form__field" type="text" id="svc-service-social-name" name="name" placeholder="Имя" autocomplete="name">
-            <label class="sr-only" for="svc-service-social-phone">Телефон</label>
-            <input class="lead-form__field" type="tel" id="svc-service-social-phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
-            <label class="sr-only" for="svc-service-social-msg">Сообщение</label>
-            <textarea class="lead-form__field" id="svc-service-social-msg" name="message" placeholder="Тип объекта, сроки, вопросы по услуге"></textarea>
+            <label class="sr-only" for="svc-service-roads-name">Имя</label>
+            <input class="lead-form__field" type="text" id="svc-service-roads-name" name="name" placeholder="Имя" autocomplete="name">
+            <label class="sr-only" for="svc-service-roads-phone">Телефон</label>
+            <input class="lead-form__field" type="tel" id="svc-service-roads-phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+            <label class="sr-only" for="svc-service-roads-msg">Сообщение</label>
+            <textarea class="lead-form__field" id="svc-service-roads-msg" name="message" placeholder="Тип объекта, сроки, вопросы по услуге"></textarea>
             <label class="lead-form__check">
               <input type="checkbox" name="pd_consent" value="1" required>
-              <span>Ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных</a> и даю <a href="consent.html" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span>
+              <span>Ознакомлен(а) с <a href="privacy.php" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных</a> и даю <a href="consent.php" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span>
             </label>
             <div class="form-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
             <button class="btn btn--primary btn--block" type="submit">Отправить заявку</button>
@@ -103,19 +103,19 @@
       <div>
         <h3 class="footer__heading">Меню</h3>
         <ul class="footer__links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="services.html">Услуги</a></li>
-          <li><a href="production.html">Производство</a></li>
-          <li><a href="projects.html">Объекты</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="about.html">О компании</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.php">Главная</a></li>
+          <li><a href="services.php">Услуги</a></li>
+          <li><a href="production.php">Производство</a></li>
+          <li><a href="projects.php">Объекты</a></li>
+          <li><a href="news.php">Новости</a></li>
+          <li><a href="about.php">О компании</a></li>
+          <li><a href="contacts.php">Контакты</a></li>
         </ul>
       </div>
       <div>
         <h3 class="footer__heading">Контакты</h3>
         <ul class="footer__links">
-          <li><a href="contacts.html">Производство и офис</a></li>
+          <li><a href="contacts.php">Производство и офис</a></li>
           <li>192019, СПб, вн. тер. «Невская Застава», ул. Хрустальная, 18, лит. А, пом. 411</li>
           <li><a href="tel:+78124561546">+7 (812) 456-15-46</a></li>
           <li><a href="mailto:petrospecmontag@mail.ru">petrospecmontag@mail.ru</a></li>
@@ -125,9 +125,9 @@
         <h3 class="footer__heading">Соцсети</h3>
         <a class="footer__social" href="#" rel="noopener noreferrer">ВКонтакте</a>
         <p class="footer__legal">
-          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="privacy.php">Политика конфиденциальности</a>
           ·
-          <a href="consent.html">Согласие на обработку персональных данных</a>
+          <a href="consent.php">Согласие на обработку персональных данных</a>
         </p>
         <p class="footer__copy">© <span id="year"></span> ООО «Петроспецмонтаж»</p>
       </div>

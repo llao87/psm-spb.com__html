@@ -12,7 +12,7 @@
             <textarea class="lead-form__field" id="page-cb-index-msg" name="message" placeholder="Тип объекта, сроки, вопрос"></textarea>
             <label class="lead-form__check">
               <input type="checkbox" name="pd_consent" value="1" required>
-              <span>Ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных</a> и даю <a href="consent.html" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span>
+              <span>Ознакомлен(а) с <a href="privacy.php" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных</a> и даю <a href="consent.php" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span>
             </label>
             <div class="form-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
             <button class="btn btn--primary btn--block" type="submit">Отправить заявку</button>

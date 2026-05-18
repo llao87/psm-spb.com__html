@@ -1369,7 +1369,7 @@ textarea.lead-form__field {
   color: var(--ink-muted);
 }
 
-/* Project gallery modal (projects.html) */
+/* Project gallery modal (projects.php) */
 .pg-modal {
   position: fixed;
   inset: 0;
