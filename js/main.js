@@ -99,6 +99,13 @@
       }
       showToast("Заявка принята. Мы свяжемся с вами в ближайшее время.", leadForm);
       leadForm.reset();
+      if (leadForm.classList.contains("js-callback-form")) {
+        var cbModal = document.getElementById("callbackModal");
+        if (cbModal) {
+          cbModal.hidden = true;
+          document.body.style.overflow = "";
+        }
+      }
     });
   });
 
@@ -131,52 +138,46 @@
     });
   }
 
-  /* Форма обратного звонка — всплывающая */
-  (function initServiceLeadForm() {
-    var formSection = document.querySelector(".service-lead");
-    if (!formSection) return;
+  /* Форма обратного звонка — модальное окно (footer.php) */
+  (function initCallbackModal() {
+    var modal = document.getElementById("callbackModal");
+    if (!modal) return;
 
-    // Создаём кнопку для открытия формы
-    var triggerBtn = document.createElement("button");
-    triggerBtn.type = "button";
-    triggerBtn.className = "btn btn--primary service-lead__trigger";
-    triggerBtn.textContent = "Заказать обратный звонок";
-    triggerBtn.setAttribute("aria-haspopup", "dialog");
+    var phoneInput = document.getElementById("callback-phone");
+    var lastFocus = null;
 
-    // Находим секцию с услугами или другое подходящее место
-    var servicesSection = document.querySelector(".activity");
-    if (servicesSection) {
-      var note = servicesSection.querySelector(".section-note");
-      if (note) {
-        note.parentNode.insertBefore(triggerBtn, note);
-      } else {
-        servicesSection.appendChild(triggerBtn);
-      }
-    } else {
-      // Если нет, вставляем после хедера
-      var header = document.querySelector("header");
-      if (header) {
-        header.insertAdjacentElement("afterend", triggerBtn);
+    function closeModal() {
+      if (modal.hidden) return;
+      modal.hidden = true;
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onDocKey);
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus();
       }
     }
 
-    // Показываем форму
-    triggerBtn.addEventListener("click", function () {
-      formSection.hidden = false;
-      // Фокус на первое поле
-      var firstInput = formSection.querySelector("input, textarea");
-      if (firstInput) {
-        firstInput.focus();
+    function openModal() {
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onDocKey);
+      if (phoneInput) phoneInput.focus();
+    }
+
+    function onDocKey(e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeModal();
       }
+    }
+
+    document.querySelectorAll(".js-open-callback").forEach(function (btn) {
+      btn.addEventListener("click", openModal);
     });
 
-    // Скрываем форму при отправке
-    var form = formSection.querySelector("form");
-    if (form) {
-      form.addEventListener("submit", function () {
-        formSection.hidden = true;
-      });
-    }
+    modal.querySelectorAll("[data-cb-close]").forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
   })();
 
   /* Главная: полноширинный слайдер */
