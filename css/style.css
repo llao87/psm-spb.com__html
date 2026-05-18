@@ -242,7 +242,9 @@ a:hover {
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .preview__card:hover {
@@ -320,7 +322,7 @@ a:hover {
   border: 1px solid var(--line);
   aspect-ratio: 16 / 9;
   min-height: 220px;
-  max-height: min(52vh, 440px);
+  max-height: max(52vh, 600px);
   background: var(--line);
 }
 
@@ -568,7 +570,9 @@ textarea.lead-form__field {
   width: 22px;
   background: var(--ink);
   margin-inline: auto;
-  transition: transform 0.2s, opacity 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 
 .burger[aria-expanded="true"] span:nth-child(1) {
@@ -632,7 +636,11 @@ textarea.lead-form__field {
   border: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
 }
 
 .btn:active {
@@ -732,29 +740,64 @@ textarea.lead-form__field {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.4);
 }
 
-.hero-fs__bg--1 {
+/* .hero-fs__bg--1 {
   background:
-    linear-gradient(115deg, rgba(15, 20, 28, 0.88) 0%, rgba(36, 48, 64, 0.55) 45%, rgba(196, 92, 38, 0.22) 100%),
-    radial-gradient(ellipse 90% 70% at 85% 20%, rgba(196, 92, 38, 0.35), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 15% 80%, rgba(42, 111, 107, 0.25), transparent 50%),
+    linear-gradient(
+      115deg,
+      rgba(15, 20, 28, 0.88) 0%,
+      rgba(36, 48, 64, 0.55) 45%,
+      rgba(196, 92, 38, 0.22) 100%
+    ),
+    radial-gradient(
+      ellipse 90% 70% at 85% 20%,
+      rgba(196, 92, 38, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 15% 80%,
+      rgba(42, 111, 107, 0.25),
+      transparent 50%
+    ),
     linear-gradient(160deg, #1a2433 0%, #0f141c 100%);
 }
 
 .hero-fs__bg--2 {
   background:
-    linear-gradient(105deg, rgba(15, 22, 28, 0.9) 0%, rgba(26, 74, 71, 0.45) 50%, rgba(15, 20, 28, 0.75) 100%),
-    radial-gradient(ellipse 100% 80% at 70% 0%, rgba(42, 111, 107, 0.4), transparent 50%),
+    linear-gradient(
+      105deg,
+      rgba(15, 22, 28, 0.9) 0%,
+      rgba(26, 74, 71, 0.45) 50%,
+      rgba(15, 20, 28, 0.75) 100%
+    ),
+    radial-gradient(
+      ellipse 100% 80% at 70% 0%,
+      rgba(42, 111, 107, 0.4),
+      transparent 50%
+    ),
     linear-gradient(180deg, #152028 0%, #0c1016 100%);
-}
+} 
 
 .hero-fs__bg--3 {
   background:
-    linear-gradient(125deg, rgba(20, 24, 30, 0.92) 0%, rgba(80, 48, 28, 0.35) 55%, rgba(15, 18, 24, 0.9) 100%),
-    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(196, 92, 38, 0.3), transparent 60%),
+    linear-gradient(
+      125deg,
+      rgba(20, 24, 30, 0.92) 0%,
+      rgba(80, 48, 28, 0.35) 55%,
+      rgba(15, 18, 24, 0.9) 100%
+    ),
+    radial-gradient(
+      ellipse 80% 60% at 20% 30%,
+      rgba(196, 92, 38, 0.3),
+      transparent 60%
+    ),
     linear-gradient(200deg, #1e2a38 0%, #0d1118 100%);
-}
+}*/
 
 .hero-fs__scrim {
   position: absolute;
@@ -820,7 +863,9 @@ textarea.lead-form__field {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
 
 .hero-fs__nav:hover {
@@ -865,7 +910,9 @@ textarea.lead-form__field {
   padding: 0;
   background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition:
+    transform 0.2s,
+    background 0.2s;
 }
 
 .hero-fs__dot:hover {
@@ -911,7 +958,7 @@ textarea.lead-form__field {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--brand);
 }
 
 .hero__stats {
@@ -1063,7 +1110,9 @@ textarea.lead-form__field {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.35rem 1.4rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .card:hover {
@@ -1137,7 +1186,9 @@ textarea.lead-form__field {
 .card--reveal {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .card--reveal.is-visible {
@@ -1218,7 +1269,10 @@ textarea.lead-form__field {
   font-size: 0.875rem;
   cursor: pointer;
   color: var(--ink-muted);
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
 }
 
 .tabs__btn:hover {
@@ -1243,7 +1297,9 @@ textarea.lead-form__field {
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
-  transition: opacity 0.25s, transform 0.25s;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
 }
 
 .project.is-hidden {
@@ -1363,7 +1419,9 @@ textarea.lead-form__field {
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .pg-modal__close:hover {
@@ -1559,7 +1617,9 @@ textarea.lead-form__field {
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .pg-gallery__nav:hover:not(:disabled) {
@@ -1672,7 +1732,10 @@ textarea.lead-form__field {
   line-height: 1;
   cursor: pointer;
   box-shadow: var(--shadow);
-  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    opacity 0.2s;
 }
 
 .tc-btn:hover:not(:disabled) {
@@ -1944,7 +2007,9 @@ textarea.lead-form__field {
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .teaser:hover {
@@ -2133,7 +2198,9 @@ textarea.lead-form__field {
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .news-card:hover {

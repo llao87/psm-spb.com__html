@@ -131,6 +131,54 @@
     });
   }
 
+  /* Форма обратного звонка — всплывающая */
+  (function initServiceLeadForm() {
+    var formSection = document.querySelector(".service-lead");
+    if (!formSection) return;
+
+    // Создаём кнопку для открытия формы
+    var triggerBtn = document.createElement("button");
+    triggerBtn.type = "button";
+    triggerBtn.className = "btn btn--primary service-lead__trigger";
+    triggerBtn.textContent = "Заказать обратный звонок";
+    triggerBtn.setAttribute("aria-haspopup", "dialog");
+
+    // Находим секцию с услугами или другое подходящее место
+    var servicesSection = document.querySelector(".activity");
+    if (servicesSection) {
+      var note = servicesSection.querySelector(".section-note");
+      if (note) {
+        note.parentNode.insertBefore(triggerBtn, note);
+      } else {
+        servicesSection.appendChild(triggerBtn);
+      }
+    } else {
+      // Если нет, вставляем после хедера
+      var header = document.querySelector("header");
+      if (header) {
+        header.insertAdjacentElement("afterend", triggerBtn);
+      }
+    }
+
+    // Показываем форму
+    triggerBtn.addEventListener("click", function () {
+      formSection.hidden = false;
+      // Фокус на первое поле
+      var firstInput = formSection.querySelector("input, textarea");
+      if (firstInput) {
+        firstInput.focus();
+      }
+    });
+
+    // Скрываем форму при отправке
+    var form = formSection.querySelector("form");
+    if (form) {
+      form.addEventListener("submit", function () {
+        formSection.hidden = true;
+      });
+    }
+  })();
+
   /* Главная: полноширинный слайдер */
   var heroFs = document.getElementById("heroFs");
   var heroTrack = document.getElementById("heroFsTrack");

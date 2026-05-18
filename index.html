@@ -35,7 +35,7 @@
           <li><a href="about.html">О компании</a></li>
           <li><a href="contacts.html">Контакты</a></li>
         </ul>
-        <a class="btn btn--primary nav__cta" href="contacts.html#request">Оставить заявку</a>
+        <button type="button" class="btn btn--primary nav__cta" onclick="document.querySelector('.service-lead').hidden = false; document.querySelector('#page-cb-index-phone').focus(); return false;">Оставить заявку</button>
       </nav>
       <button class="burger" type="button" id="burger" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню">
         <span></span><span></span><span></span>
@@ -62,12 +62,12 @@
             aria-label="1 из 3"
             aria-hidden="false"
           >
-            <div class="hero-fs__bg hero-fs__bg--1" aria-hidden="true"></div>
+            <div class="hero-fs__bg hero-fs__bg--1" aria-hidden="true" style="background-image: url(images/promo-1.jpg);"></div>
             <div class="hero-fs__scrim" aria-hidden="true"></div>
             <div class="container hero-fs__copy">
-              <p class="eyebrow hero-fs__eyebrow">Проектирование и строительство</p>
-              <h1 class="hero-fs__title">Инженерия и стройка в <em>Санкт-Петербурге</em> и ЛО</h1>
-              <p class="hero-fs__lead">Комплексные работы «под ключ», поставки для фасадных систем и сопровождение объекта от идеи до ввода.</p>
+              <p class="eyebrow hero-fs__eyebrow">Инженерные сети</p>
+              <h1 class="hero-fs__title">Наружные инженерные сети  <br>в&nbsp;Санкт-Петербурге и ЛО</h1>
+              <p class="hero-fs__lead">наружные электрические сети, наружные сети связи, тепловые сети, внешнее освещение, наружные сети водоснабжения и водоотведения.</p>
               <div class="hero-fs__actions">
                 <a class="btn btn--primary" href="contacts.html#request">Рассчитать смету</a>
                 <a class="btn btn--ghost btn--on-dark" href="services.html">Смотреть услуги</a>
@@ -82,12 +82,12 @@
             aria-label="2 из 3"
             aria-hidden="true"
           >
-            <div class="hero-fs__bg hero-fs__bg--2" aria-hidden="true"></div>
+            <div class="hero-fs__bg hero-fs__bg--2" aria-hidden="true" style="background-image: url(images/promo-2.jpg);"></div>
             <div class="hero-fs__scrim" aria-hidden="true"></div>
             <div class="container hero-fs__copy">
-              <p class="eyebrow hero-fs__eyebrow">Фасады и материалы</p>
-              <h2 class="hero-fs__title">Поставки и монтаж для <em>фасадных систем</em></h2>
-              <p class="hero-fs__lead">Подбор решений под архитектуру, контроль узлов на площадке и гарантийное сопровождение.</p>
+              <p class="eyebrow hero-fs__eyebrow">Дорожное строительство</p>
+              <h2 class="hero-fs__title">Благоустройство и&nbsp;дорожное&nbsp;строительство <br>в&nbsp;Санкт-Петербурге и ЛО</h2>
+              <p class="hero-fs__lead">мощение дорог, укладка тротуарной плитки, асфальтирование дорог, кровельные работы, ограждение территории</p>
               <div class="hero-fs__actions">
                 <a class="btn btn--primary" href="contacts.html#request">Оставить заявку</a>
                 <a class="btn btn--ghost btn--on-dark" href="services.html">Каталог услуг</a>
@@ -102,12 +102,12 @@
             aria-label="3 из 3"
             aria-hidden="true"
           >
-            <div class="hero-fs__bg hero-fs__bg--3" aria-hidden="true"></div>
+            <div class="hero-fs__bg hero-fs__bg--3" aria-hidden="true" style="background-image: url(images/promo-3.jpg);"></div>
             <div class="hero-fs__scrim" aria-hidden="true"></div>
             <div class="container hero-fs__copy">
-              <p class="eyebrow hero-fs__eyebrow">Генподряд и сроки</p>
-              <h2 class="hero-fs__title">От частного дома до <em>промышленного</em> объекта</h2>
-              <p class="hero-fs__lead">Единая команда проектировщиков и монтажа — сроки фиксируем в договоре, отчётность понятна заказчику.</p>
+              <p class="eyebrow hero-fs__eyebrow">Загородное строительство</p>
+              <h2 class="hero-fs__title">Загородное строительство</h2>
+              <p class="hero-fs__lead">ландшафтные работы, работы нулевого цикла, возведение стен и&nbsp;перекрытий, кровельные работы, благоустройство территории</p>
               <div class="hero-fs__actions">
                 <a class="btn btn--primary" href="projects.html">Наши объекты</a>
                 <a class="btn btn--ghost btn--on-dark" href="about.html">О компании</a>
@@ -260,30 +260,64 @@
     </section>
   </main>
 
-    <section class="section service-lead" aria-labelledby="page-cb-index-title">
-      <div class="container">
-        <div class="service-lead__box contact-card card--reveal">
-          <h2 id="page-cb-index-title">Заказать обратный звонок</h2>
-          <p class="contact-card__intro">Укажите телефон и при необходимости кратко опишите задачу — менеджер свяжется с вами в рабочее время.</p>
-          <form class="lead-form lead-form--stack js-lead-form" novalidate>
-            <label class="sr-only" for="page-cb-index-name">Имя</label>
-            <input class="lead-form__field" type="text" id="page-cb-index-name" name="name" placeholder="Имя" autocomplete="name">
-            <label class="sr-only" for="page-cb-index-phone">Телефон</label>
-            <input class="lead-form__field" type="tel" id="page-cb-index-phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
-            <label class="sr-only" for="page-cb-index-msg">Сообщение</label>
-            <textarea class="lead-form__field" id="page-cb-index-msg" name="message" placeholder="Тип объекта, сроки, вопрос"></textarea>
-            <label class="lead-form__check">
-              <input type="checkbox" name="pd_consent" value="1" required>
-              <span>Ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных</a> и даю <a href="consent.html" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</span>
-            </label>
-            <div class="form-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
-            <button class="btn btn--primary btn--block" type="submit">Отправить заявку</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
+  <!-- Всплывающая форма обратной связи -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Вставляем содержимое формы
+      fetch('includes/form-service-lead.html')
+        .then(response => response.text())
+        .then(html => {
+          document.body.insertAdjacentHTML('beforeend', html);
+          
+          // Добавляем кнопку для её вызова
+          const formSection = document.querySelector('.service-lead');
+          if (formSection) {
+            const triggerBtn = document.createElement('button');
+            triggerBtn.type = 'button';
+            triggerBtn.className = 'btn btn--primary service-lead__trigger';
+            triggerBtn.textContent = 'Заказать обратный звонок';
+            triggerBtn.setAttribute('aria-haspopup', 'dialog');
+            
+            // Вставляем кнопку перед секцией услуг
+            const servicesSection = document.querySelector('.activity');
+            if (servicesSection) {
+              const note = servicesSection.querySelector('.section-note');
+              if (note) {
+                note.parentNode.insertBefore(triggerBtn, note);
+              } else {
+                servicesSection.appendChild(triggerBtn);
+              }
+            } else {
+              // Если нет секции услуг, вставляем после хедера
+              const header = document.querySelector('header');
+              if (header) {
+                header.insertAdjacentElement('afterend', triggerBtn);
+              }
+            }
+            
+            // Обработчик открытия формы
+            triggerBtn.addEventListener('click', function () {
+              formSection.hidden = false;
+              const firstInput = formSection.querySelector('input, textarea');
+              if (firstInput) {
+                firstInput.focus();
+              }
+            });
+            
+            // Обработчик закрытия после отправки
+            const form = formSection.querySelector('form');
+            if (form) {
+              form.addEventListener('submit', function () {
+                formSection.hidden = true;
+              });
+            }
+          }
+        });
+    });
+  </script>
+  
   <footer class="footer" id="contacts">
+
     <div class="container footer__grid">
       <div>
         <p class="footer__brand">ООО «Петроспецмонтаж»</p>
