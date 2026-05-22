@@ -148,12 +148,12 @@ require __DIR__ . '/includes/header.php';
         <div class="about-split">
           <div class="legal__article about-block about-split__text">
             <h2 class="section__title">О нас</h2>
-            <p>Фиксируем объём и сроки в договоре, ведём журнал работ и прозрачную отчётность по смете. На крупных объектах назначаем единого менеджера проекта как точку входа для заказчика.</p>
+            <p>ООО «ПЕТРОСПЕЦМОНТАЖ» — организация и выполнение строительных работ, комплексные поставки материалов для фасадных систем. Мы гарантируем высокое качество, соблюдение сроков и индивидуальный подход. Наш опыт и современные технологии позволяют реализовывать проекты любой сложности. Надёжность, профессионализм и доверие — наши главные принципы.</p>
             <p>География — Санкт-Петербург и Ленинградская область; отдельные направления возможны по согласованию. <a href="/about.php">Подробнее о компании</a></p>
           </div>
           <div class="legal__article about-split__media">
             <div class="about-split__figure-wrap">
-              <img class="about-split__img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=900&amp;h=700&amp;q=80" width="900" height="700" alt="Строительный объект и проектная документация" decoding="async" fetchpriority="low">
+              <img class="about-split__img" src="images/home-about.jpeg" width="900" height="700" alt="О нас">
             </div>
           </div>
         </div>
@@ -218,20 +218,7 @@ require __DIR__ . '/includes/header.php';
       </div>
     </section>
 
-    <section class="cta-band" id="estimate">
-      <div class="container cta-band__inner">
-        <div>
-          <h2 class="cta-band__title">Смета за два часа</h2>
-          <p class="cta-band__text">Оставьте телефон — перезвоним и подготовим предварительную смету бесплатно в течение двух часов в рабочее время. Или перейдите на страницу контактов для полной формы.</p>
-        </div>
-        <form class="lead-form js-lead-form" novalidate>
-          <label class="sr-only" for="homePhone">Телефон</label>
-          <input class="lead-form__input" type="tel" id="homePhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
-          <button class="btn btn--light" type="submit">Отправить</button>
-          <div class="form-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
-        </form>
-      </div>
-    </section>
   </main>
 
+<?php require __DIR__ . '/includes/estimate-form.php'; ?>
 <?php require __DIR__ . '/includes/footer.php'; ?>

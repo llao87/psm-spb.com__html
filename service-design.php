@@ -48,4 +48,5 @@ require __DIR__ . '/includes/header.php';
     </section>
   </main>
 
+<?php require __DIR__ . '/includes/estimate-form.php'; ?>
 <?php require __DIR__ . '/includes/footer.php'; ?>

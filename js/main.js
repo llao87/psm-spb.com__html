@@ -3,6 +3,29 @@
   const nav = document.getElementById("nav");
   const yearEl = document.getElementById("year");
   const leadForms = document.querySelectorAll("form.js-lead-form");
+  const PHONE_MASK = "+7 (999) 999-99-99";
+
+  function initPhoneMasks() {
+    if (typeof Inputmask === "undefined") return;
+    document.querySelectorAll("form.js-lead-form input[name='phone']").forEach(function (el) {
+      if (el.inputmask) return;
+      Inputmask({
+        mask: PHONE_MASK,
+        showMaskOnHover: false,
+        showMaskOnFocus: true,
+        clearIncomplete: true,
+      }).mask(el);
+    });
+  }
+
+  function isPhoneComplete(phoneEl) {
+    if (!phoneEl) return false;
+    if (phoneEl.inputmask) return phoneEl.inputmask.isComplete();
+    var digits = phoneEl.value.replace(/\D/g, "");
+    return digits.length >= 11;
+  }
+
+  initPhoneMasks();
   const pricelistBtn = document.getElementById("pricelistBtn");
   const tabButtons = document.querySelectorAll(".tabs__btn");
   const projects = document.querySelectorAll(".project");
@@ -85,8 +108,7 @@
     leadForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var phone = leadForm.querySelector('input[name="phone"]');
-      var v = phone && phone.value.trim();
-      if (!v || v.length < 6) {
+      if (!isPhoneComplete(phone)) {
         showToast("Укажите телефон для обратной связи.", leadForm);
         if (phone) phone.focus();
         return;

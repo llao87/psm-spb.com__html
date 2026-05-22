@@ -27,4 +27,5 @@ require __DIR__ . '/includes/header.php';
     </div>
   </main>
 
+<?php require __DIR__ . '/includes/estimate-form.php'; ?>
 <?php require __DIR__ . '/includes/footer.php'; ?>

@@ -45,7 +45,7 @@ require __DIR__ . '/includes/header.php';
               <label class="sr-only" for="contactName">Имя</label>
               <input class="lead-form__field" type="text" id="contactName" name="name" placeholder="Имя" autocomplete="name">
               <label class="sr-only" for="contactPhone">Телефон</label>
-              <input class="lead-form__field" type="tel" id="contactPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+              <input class="lead-form__field js-phone-mask" type="tel" id="contactPhone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
               <label class="sr-only" for="contactMsg">Сообщение</label>
               <textarea class="lead-form__field" id="contactMsg" name="message" placeholder="Тип объекта, площадь, сроки"></textarea>
               <label class="lead-form__check">
@@ -86,4 +86,5 @@ require __DIR__ . '/includes/header.php';
     </section>
   </main>
 
+<?php require __DIR__ . '/includes/estimate-form.php'; ?>
 <?php require __DIR__ . '/includes/footer.php'; ?>
