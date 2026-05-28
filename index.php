@@ -43,8 +43,8 @@ require __DIR__ . '/includes/header.php';
               <h1 class="hero-fs__title">Наружные инженерные сети  <br>в&nbsp;Санкт-Петербурге и ЛО</h1>
               <p class="hero-fs__lead">наружные электрические сети, наружные сети связи, тепловые сети, внешнее освещение, наружные сети водоснабжения и водоотведения.</p>
               <div class="hero-fs__actions">
-                <a class="btn btn--primary" href="/contacts.php#request">Рассчитать смету</a>
-                <a class="btn btn--ghost btn--on-dark" href="/services.php">Смотреть услуги</a>
+                <button type="button" class="btn btn--primary js-open-callback" aria-haspopup="dialog" aria-controls="callbackModal">Оставить заявку</button>
+                <a class="btn btn--ghost btn--on-dark" href="/services.php">Все услуги</a>
               </div>
             </div>
           </li>
@@ -63,8 +63,8 @@ require __DIR__ . '/includes/header.php';
               <h2 class="hero-fs__title">Благоустройство и&nbsp;дорожное&nbsp;строительство <br>в&nbsp;Санкт-Петербурге и ЛО</h2>
               <p class="hero-fs__lead">мощение дорог, укладка тротуарной плитки, асфальтирование дорог, кровельные работы, ограждение территории</p>
               <div class="hero-fs__actions">
-                <a class="btn btn--primary" href="/contacts.php#request">Оставить заявку</a>
-                <a class="btn btn--ghost btn--on-dark" href="/services.php">Каталог услуг</a>
+                <button type="button" class="btn btn--primary js-open-callback" aria-haspopup="dialog" aria-controls="callbackModal">Оставить заявку</button>
+                <a class="btn btn--ghost btn--on-dark" href="/services.php">Все услуги</a>
               </div>
             </div>
           </li>
@@ -83,8 +83,8 @@ require __DIR__ . '/includes/header.php';
               <h2 class="hero-fs__title">Загородное строительство</h2>
               <p class="hero-fs__lead">ландшафтные работы, работы нулевого цикла, возведение стен и&nbsp;перекрытий, кровельные работы, благоустройство территории</p>
               <div class="hero-fs__actions">
-                <a class="btn btn--primary" href="/projects.php">Наши объекты</a>
-                <a class="btn btn--ghost btn--on-dark" href="/about.php">О компании</a>
+                <button type="button" class="btn btn--primary js-open-callback" aria-haspopup="dialog" aria-controls="callbackModal">Оставить заявку</button>
+                <a class="btn btn--ghost btn--on-dark" href="/services.php">Все услуги</a>
               </div>
             </div>
           </li>
@@ -103,11 +103,110 @@ require __DIR__ . '/includes/header.php';
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="about-split">
+          <div class="legal__article about-block about-split__text">
+            <h2 class="section__title">О нас</h2>
+            <p>ООО «ПЕТРОСПЕЦМОНТАЖ» — организация и выполнение строительных работ, комплексные поставки материалов для фасадных систем. Мы гарантируем высокое качество, соблюдение сроков и индивидуальный подход. Наш опыт и современные технологии позволяют реализовывать проекты любой сложности. Надёжность, профессионализм и доверие — наши главные принципы.</p>
+            <p>География — Санкт-Петербург и Ленинградская область; отдельные направления возможны по согласованию. <a href="/about.php">Подробнее о компании</a></p>
+          </div>
+          <div class="legal__article about-split__media">
+            <div class="about-split__figure-wrap">
+              <img class="about-split__img" src="images/home-about.jpeg" width="900" height="700" alt="О нас">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <h2 class="section__title">Наши услуги</h2>
+            <p class="section__intro">Проектирование, наружные сети и внутренние системы — подробности на отдельных страницах.</p>
+          </div>
+          <a class="btn btn--ghost" href="/services.php">Все услуги</a>
+        </header>
+        <div class="cards preview__cards">
+          <a class="card card--service card--reveal" href="/service-design.php">
+            <div class="card__media">
+              <img src="/images/design.jpg" width="800" height="500" alt="Инженеры с проектной документацией на строительной площадке" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Проектирование и изыскания</h3>
+              <p class="card__text">Обследования, ПД и РД, дизайн-проекты, сметы, генпроектирование.</p>
+            </div>
+          </a>
+          <a class="card card--service card--reveal" href="/service-external-networks.php">
+            <div class="card__media">
+              <img src="/images/vnesh.jpg" width="800" height="500" alt="Инженер в каске на промышленном объекте, инженерные коммуникации" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Наружные сети</h3>
+              <p class="card__text">Электроснабжение, связь, теплотрассы, наружное освещение, водопровод и канализация.</p>
+            </div>
+          </a>
+          <a class="card card--service card--reveal" href="/service-mep-internal.php">
+            <div class="card__media">
+              <img src="/images/vnutr.jpg" width="800" height="500" alt="Электромонтаж и слаботочные системы" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Внутренние инженерные системы</h3>
+              <p class="card__text">Водоснабжение и канализация, отопление, вентиляция и кондиционирование, СКС, ОПС, СКУД.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-portfolio">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <h2 class="section__title">Портфолио</h2>
+            <p class="section__intro">Частные дома, коммерция и госзаказ — примеры реализованных объектов по типам заказчиков.</p>
+          </div>
+          <a class="btn btn--ghost" href="/projects.php">Все проекты</a>
+        </header>
+        <div class="cards">
+          <a class="card card--service card--reveal" href="/projects.php#private">
+            <div class="card__media">
+              <img src="/images/dom.jpg" width="800" height="500" alt="Загородный частный дом" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Частные объекты</h3>
+              <p class="card__text">Загородные дома, коттеджи и ремонт жилых помещений «под ключ».</p>
+            </div>
+          </a>
+          <a class="card card--service card--reveal" href="/projects.php#business">
+            <div class="card__media">
+              <img src="/images/otdelka.jpg" width="800" height="500" alt="Коммерческий объект после отделки" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Объекты для бизнеса</h3>
+              <p class="card__text">Торговые и офисные пространства, промышленность, фасады и реконструкция.</p>
+            </div>
+          </a>
+          <a class="card card--service card--reveal" href="/projects.php#state">
+            <div class="card__media">
+              <img src="/images/katok.jpg" width="800" height="500" alt="Социальный и муниципальный объект" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Гос объекты</h3>
+              <p class="card__text">Социальная инфраструктура, благоустройство и объекты по госзаказу.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="home-hero-metrics" id="homeHeroMetrics" aria-label="Ключевые показатели">
       <div class="container">
         <header class="section__head">
           <h2 class="section__title">Наша работа в цифрах</h2>
-          <p class="section__intro">Выберите раздел — подробности на отдельных страницах.</p>
+          <p class="section__intro">Более двадцати лет «Петроспецмонтаж» уверенно проектирует, монтирует и сдаёт объекты в Санкт-Петербурге и Ленинградской области: свыше пятисот уже реализованных проектов — от коттеджей до промышленных площадок. В каталоге одиннадцать направлений работ, ориентировочную смету подготовим для вас всего за два часа.</p>
         </header>
       </div>
 
@@ -145,74 +244,46 @@ require __DIR__ . '/includes/header.php';
 
     <section class="section">
       <div class="container">
-        <div class="about-split">
-          <div class="legal__article about-block about-split__text">
-            <h2 class="section__title">О нас</h2>
-            <p>ООО «ПЕТРОСПЕЦМОНТАЖ» — организация и выполнение строительных работ, комплексные поставки материалов для фасадных систем. Мы гарантируем высокое качество, соблюдение сроков и индивидуальный подход. Наш опыт и современные технологии позволяют реализовывать проекты любой сложности. Надёжность, профессионализм и доверие — наши главные принципы.</p>
-            <p>География — Санкт-Петербург и Ленинградская область; отдельные направления возможны по согласованию. <a href="/about.php">Подробнее о компании</a></p>
-          </div>
-          <div class="legal__article about-split__media">
-            <div class="about-split__figure-wrap">
-              <img class="about-split__img" src="images/home-about.jpeg" width="900" height="700" alt="О нас">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="preview">
-      <div class="container">
-        <header class="section__head">
-          <h2 class="section__title">Наши услуги</h2>
-          <p class="section__intro">Выберите раздел — подробности на отдельных страницах.</p>
-        </header>
-        <div class="preview__grid">
-          <a class="preview__card card--reveal" href="/services.php">
-            <h2>Услуги</h2>
-            <p>Проектирование, инженерия, строительство, фасады, благоустройство и другое.</p>
-            <span class="preview__more">Перейти →</span>
-          </a>
-          <a class="preview__card card--reveal" href="/projects.php">
-            <h2>Объекты</h2>
-            <p>Примеры реализованных проектов для бизнеса, частных заказчиков и госсектора.</p>
-            <span class="preview__more">Перейти →</span>
-          </a>
-          <a class="preview__card card--reveal" href="/about.php">
-            <h2>О компании</h2>
-            <p>Опыт, отзывы, партнёры и принципы работы команды.</p>
-            <span class="preview__more">Перейти →</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
         <header class="section__head section__head--split">
           <div>
             <h2 class="section__title">Новости</h2>
             <p class="section__intro">Заметки для заказчиков и короткие отчёты с площадок.</p>
           </div>
-          <a class="btn btn--ghost" href="/news.php">Все материалы</a>
+          <a class="btn btn--ghost" href="/news.php">Все новости</a>
         </header>
         <div class="teasers">
           <a class="teaser card--reveal" href="/news-smeta-dva-chasa.php">
-            <span class="teaser__label">18 марта · Сервис</span>
-            <h3 class="teaser__title">Предварительная смета за два часа</h3>
-            <p class="teaser__text">Как считаем ориентир без визита и когда нужен выезд инженера.</p>
-            <span class="teaser__more">Читать</span>
+            <div class="teaser__media">
+              <img src="/images/home-bill-byu-5-min.jpg" width="1024" height="1024" alt="Смета и проектная документация" loading="lazy" decoding="async">
+            </div>
+            <div class="teaser__body">
+              <span class="teaser__label">18 марта · Сервис</span>
+              <h3 class="teaser__title">Предварительная смета за два часа</h3>
+              <p class="teaser__text">Как считаем ориентир без визита и когда нужен выезд инженера.</p>
+              <span class="teaser__more">Читать</span>
+            </div>
           </a>
           <a class="teaser card--reveal" href="/news-fasad-zimoy.php">
-            <span class="teaser__label">6 февраля · Фасады</span>
-            <h3 class="teaser__title">Фасадные работы зимой</h3>
-            <p class="teaser__text">Температура, хранение материалов и приёмка слоёв.</p>
-            <span class="teaser__more">Читать</span>
+            <div class="teaser__media">
+              <img src="/images/home-bill-byu-5-min.jpg" width="1024" height="1024" alt="Фасадные работы" loading="lazy" decoding="async">
+            </div>
+            <div class="teaser__body">
+              <span class="teaser__label">6 февраля · Фасады</span>
+              <h3 class="teaser__title">Фасадные работы зимой</h3>
+              <p class="teaser__text">Температура, хранение материалов и приёмка слоёв.</p>
+              <span class="teaser__more">Читать</span>
+            </div>
           </a>
           <a class="teaser card--reveal" href="/news-blagoustroystvo-etapy.php">
-            <span class="teaser__label">22 января · Благоустройство</span>
-            <h3 class="teaser__title">Этапы благоустройства</h3>
-            <p class="teaser__text">От подготовки участка до приёмки покрытий.</p>
-            <span class="teaser__more">Читать</span>
+            <div class="teaser__media">
+              <img src="/images/home-bill-byu-5-min.jpg" width="1024" height="1024" alt="Благоустройство территории" loading="lazy" decoding="async">
+            </div>
+            <div class="teaser__body">
+              <span class="teaser__label">22 января · Благоустройство</span>
+              <h3 class="teaser__title">Этапы благоустройства</h3>
+              <p class="teaser__text">От подготовки участка до приёмки покрытий.</p>
+              <span class="teaser__more">Читать</span>
+            </div>
           </a>
         </div>
       </div>

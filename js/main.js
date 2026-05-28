@@ -88,20 +88,29 @@
   }
 
   if (tabButtons.length && projects.length) {
+    function applyProjectsFilter(filter) {
+      tabButtons.forEach(function (b) {
+        const isActive = (b.getAttribute("data-filter") || "all") === filter;
+        b.classList.toggle("is-active", isActive);
+        b.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      projects.forEach(function (card) {
+        const cats = (card.getAttribute("data-cat") || "").split(/\s+/);
+        const show = filter === "all" || cats.includes(filter);
+        card.classList.toggle("is-hidden", !show);
+      });
+    }
+
     tabButtons.forEach(function (btn) {
       btn.addEventListener("click", function () {
-        const filter = btn.getAttribute("data-filter") || "all";
-        tabButtons.forEach(function (b) {
-          b.classList.toggle("is-active", b === btn);
-          b.setAttribute("aria-selected", b === btn ? "true" : "false");
-        });
-        projects.forEach(function (card) {
-          const cats = (card.getAttribute("data-cat") || "").split(/\s+/);
-          const show = filter === "all" || cats.includes(filter);
-          card.classList.toggle("is-hidden", !show);
-        });
+        applyProjectsFilter(btn.getAttribute("data-filter") || "all");
       });
     });
+
+    var hashFilter = window.location.hash.replace(/^#/, "");
+    if (hashFilter && document.querySelector('.tabs__btn[data-filter="' + hashFilter + '"]')) {
+      applyProjectsFilter(hashFilter);
+    }
   }
 
   leadForms.forEach(function (leadForm) {
