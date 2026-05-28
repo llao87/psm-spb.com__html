@@ -49,13 +49,14 @@ if (!function_exists('nav_is_current')) {
 
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="logo" href="/index.php">
-        <span class="logo__mark" aria-hidden="true"></span>
-        <span class="logo__text">Петроспец<span>монтаж</span></span>
+      <a class="logo" href="/">
+        <img class="logo__image" src="images/logo.png" alt="Петроспецмонтаж">
+        <!-- <span class="logo__mark" aria-hidden="true"></span> -->
+        <!-- <span class="logo__text">Петроспец<span>монтаж</span></span> -->
       </a>
       <nav class="nav" id="nav" aria-label="Основное меню">
         <ul class="nav__list">
-          <li><a href="/index.php"<?= nav_is_current('index', $navActive) ?>>Главная</a></li>
+          <li><a href="/"<?= nav_is_current('index', $navActive) ?>>Главная</a></li>
           <li><a href="/about.php"<?= nav_is_current('about', $navActive) ?>>О компании</a></li>
           <li><a href="/services.php"<?= nav_is_current('services', $navActive) ?>>Услуги</a></li>
           <li><a href="/production.php"<?= nav_is_current('production', $navActive) ?>>Производство</a></li>
