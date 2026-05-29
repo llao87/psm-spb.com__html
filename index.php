@@ -9,11 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/vendor/swiper-bundle.min.css">
 </head>
 <body>
  <?php
 $navActive = 'index';
 $footerId = 'contacts';
+require __DIR__ . '/includes/news-data.php';
+$homeNews = news_get_latest(5);
 require __DIR__ . '/includes/header.php';
 ?>
 
@@ -251,40 +254,34 @@ require __DIR__ . '/includes/header.php';
           </div>
           <a class="btn btn--ghost" href="/news.php">Все новости</a>
         </header>
-        <div class="teasers">
-          <a class="teaser card--reveal" href="/news-smeta-dva-chasa.php">
-            <div class="teaser__media">
-              <img src="/images/home-bill-byu-5-min.jpg" width="1024" height="1024" alt="Смета и проектная документация" loading="lazy" decoding="async">
+        <div class="news-carousel" id="newsCarousel">
+          <div class="swiper news-carousel__swiper">
+            <div class="swiper-wrapper">
+              <?php foreach ($homeNews as $item): ?>
+              <div class="swiper-slide">
+                <a class="teaser card--reveal" href="<?= htmlspecialchars($item['href'], ENT_QUOTES, 'UTF-8') ?>">
+                  <div class="teaser__media">
+                    <img src="<?= htmlspecialchars($item['imageHome'], ENT_QUOTES, 'UTF-8') ?>" width="1024" height="1024" alt="<?= htmlspecialchars($item['imageAlt'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async">
+                  </div>
+                  <div class="teaser__body">
+                    <span class="teaser__label"><?= htmlspecialchars($item['dateHome'] . ' · ' . $item['tag'], ENT_QUOTES, 'UTF-8') ?></span>
+                    <h3 class="teaser__title"><?= htmlspecialchars($item['titleShort'], ENT_QUOTES, 'UTF-8') ?></h3>
+                    <p class="teaser__text"><?= htmlspecialchars($item['teaser'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <span class="teaser__more">Читать</span>
+                  </div>
+                </a>
+              </div>
+              <?php endforeach; ?>
             </div>
-            <div class="teaser__body">
-              <span class="teaser__label">18 марта · Сервис</span>
-              <h3 class="teaser__title">Предварительная смета за два часа</h3>
-              <p class="teaser__text">Как считаем ориентир без визита и когда нужен выезд инженера.</p>
-              <span class="teaser__more">Читать</span>
-            </div>
-          </a>
-          <a class="teaser card--reveal" href="/news-fasad-zimoy.php">
-            <div class="teaser__media">
-              <img src="/images/home-bill-byu-5-min.jpg" width="1024" height="1024" alt="Фасадные работы" loading="lazy" decoding="async">
-            </div>
-            <div class="teaser__body">
-              <span class="teaser__label">6 февраля · Фасады</span>
-              <h3 class="teaser__title">Фасадные работы зимой</h3>
-              <p class="teaser__text">Температура, хранение материалов и приёмка слоёв.</p>
-              <span class="teaser__more">Читать</span>
-            </div>
-          </a>
-          <a class="teaser card--reveal" href="/news-blagoustroystvo-etapy.php">
-            <div class="teaser__media">
-              <img src="/images/home-bill-byu-5-min.jpg" width="1024" height="1024" alt="Благоустройство территории" loading="lazy" decoding="async">
-            </div>
-            <div class="teaser__body">
-              <span class="teaser__label">22 января · Благоустройство</span>
-              <h3 class="teaser__title">Этапы благоустройства</h3>
-              <p class="teaser__text">От подготовки участка до приёмки покрытий.</p>
-              <span class="teaser__more">Читать</span>
-            </div>
-          </a>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" class="carousel-controls__btn carousel-controls__btn--prev" aria-label="Предыдущая новость">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button type="button" class="carousel-controls__btn carousel-controls__btn--next" aria-label="Следующая новость">
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -292,4 +289,5 @@ require __DIR__ . '/includes/header.php';
   </main>
 
 <?php require __DIR__ . '/includes/estimate-form.php'; ?>
+<script src="/js/vendor/swiper-bundle.min.js"></script>
 <?php require __DIR__ . '/includes/footer.php'; ?>

@@ -798,15 +798,17 @@ textarea.lead-form__field {
 
 /* Buttons */
 .btn {
+  width: auto;
+  min-width: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.3rem 1rem 0.45rem 1rem;
+  padding: 0.8rem 1.6rem;
   font-family: inherit;
   font-weight: 700;
   font-size: 0.875rem;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   border: 0.125rem solid transparent;
   cursor: pointer;
   text-decoration: none;
@@ -1105,7 +1107,11 @@ textarea.lead-form__field {
 .home-hero-metrics {
   width: 100%;
   padding-block: clamp(2.5rem, 5vw, 3.5rem);
-  background: var(--deep-dark);
+  background-color: var(--deep-dark);
+  background-image: linear-gradient(to right, var(--deep-dark) 25%, transparent 110%), url(/images/home-about.jpeg);
+  background-size: 70%;
+  background-position: 100% 70%;
+  background-repeat: no-repeat;
   color: #e8e8e8;
 }
 
@@ -1506,7 +1512,7 @@ textarea.lead-form__field {
   min-width: 12.5rem;
   flex: 1;
   padding: 0.85rem 1rem;
-  border-radius: 62.4375rem;
+  border-radius: 0.5rem;
   border: 0.0625rem solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
@@ -2268,6 +2274,61 @@ textarea.lead-form__field {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
+}
+
+/* Home news carousel (Swiper): 4 / 3 / 2 / 1 visible, step by 1 */
+.news-carousel {
+  position: relative;
+}
+
+.news-carousel__swiper {
+  overflow: hidden;
+}
+
+.news-carousel__swiper .swiper-slide {
+  height: auto;
+}
+
+.news-carousel__swiper .teaser {
+  height: 100%;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.carousel-controls__btn {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+}
+
+.carousel-controls__btn:hover:not(.swiper-button-disabled) {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.carousel-controls__btn.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 .teaser {

@@ -439,6 +439,59 @@
     apply();
   })();
 
+  /* Home: news carousel (Swiper) — 4 / 3 / 2 / 1 visible, step by 1 */
+  (function initNewsCarousel() {
+    var root = document.getElementById("newsCarousel");
+    if (!root || typeof Swiper === "undefined") return;
+
+    var swiperEl = root.querySelector(".news-carousel__swiper");
+    var prevBtn = root.querySelector(".carousel-controls__btn--prev");
+    var nextBtn = root.querySelector(".carousel-controls__btn--next");
+    if (!swiperEl || !prevBtn || !nextBtn) return;
+
+    var newsSwiper = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      grabCursor: true,
+      watchOverflow: true,
+      observer: true,
+      observeParents: true,
+      breakpointsBase: "window",
+      navigation: {
+        prevEl: prevBtn,
+        nextEl: nextBtn,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+      },
+    });
+
+    var refreshTimer;
+    function refreshNewsSwiperBreakpoints() {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(function () {
+        newsSwiper.currentBreakpoint = undefined;
+        newsSwiper.update();
+      }, 50);
+    }
+
+    window.addEventListener("resize", refreshNewsSwiperBreakpoints);
+
+    if (typeof ResizeObserver !== "undefined") {
+      new ResizeObserver(refreshNewsSwiperBreakpoints).observe(swiperEl);
+    }
+  })();
+
   /* Объекты: попап с галереей, «AJAX» при клике (projects.php) */
   (function initProjectGalleryModal() {
     var modal = document.getElementById("projectGalleryModal");
