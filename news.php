@@ -13,7 +13,7 @@
 <body>
  <?php
 $navActive = 'news';
-require __DIR__ . '/includes/news-data.php';
+require_once __DIR__ . '/includes/functions.php';
 $newsItems = news_get_all_sorted();
 require __DIR__ . '/includes/header.php';
 ?>
@@ -31,22 +31,7 @@ require __DIR__ . '/includes/header.php';
       <div class="container">
         <ul class="news-list news-list--grid">
           <?php foreach ($newsItems as $item): ?>
-          <li>
-            <a class="news-card card--reveal" href="<?= htmlspecialchars($item['href'], ENT_QUOTES, 'UTF-8') ?>">
-              <div class="news-card__media">
-                <img src="<?= htmlspecialchars($item['imageCard'], ENT_QUOTES, 'UTF-8') ?>" width="800" height="500" alt="<?= htmlspecialchars($item['imageAlt'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async">
-              </div>
-              <div class="news-card__body">
-                <div class="news-card__meta">
-                  <time datetime="<?= htmlspecialchars($item['date'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($item['dateFull'], ENT_QUOTES, 'UTF-8') ?></time>
-                  <span class="news-card__tag"><?= htmlspecialchars($item['tag'], ENT_QUOTES, 'UTF-8') ?></span>
-                </div>
-                <h2 class="news-card__title"><?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="news-card__excerpt"><?= htmlspecialchars($item['excerpt'], ENT_QUOTES, 'UTF-8') ?></p>
-                <span class="news-card__more">Читать далее</span>
-              </div>
-            </a>
-          </li>
+            <?php news_render_card($item); ?>
           <?php endforeach; ?>
         </ul>
       </div>

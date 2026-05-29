@@ -13,6 +13,8 @@
 <body>
  <?php
 $navActive = 'contacts';
+require_once __DIR__ . '/includes/functions.php';
+$site = site_get_contacts();
 require __DIR__ . '/includes/header.php';
 ?>
 
@@ -31,9 +33,9 @@ require __DIR__ . '/includes/header.php';
           <div class="contact-card card--reveal">
             <h2>Реквизиты и адрес</h2>
             <ul>
-              <li><strong>Офис и производство</strong><br>192019, г. Санкт-Петербург, вн. тер. «Невская Застава», ул. Хрустальная, д. 18, лит. А, пом. 411</li>
-              <li><a href="tel:+78124561546">+7 (812) 456-15-46</a></li>
-              <li><a href="mailto:petrospecmontag@mail.ru">petrospecmontag@mail.ru</a></li>
+              <li><strong>Офис и производство</strong><br><?= e($site['address']) ?></li>
+              <li><a href="<?= e($site['phoneHref']) ?>"><?= e($site['phone']) ?></a></li>
+              <li><a href="<?= e($site['emailHref']) ?>"><?= e($site['email']) ?></a></li>
             </ul>
             <p class="contact-card__hint">Схема проезда и парковка — по запросу менеджера.</p>
           </div>

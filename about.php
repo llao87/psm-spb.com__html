@@ -111,12 +111,8 @@ require __DIR__ . '/includes/header.php';
     <section class="section partners">
       <div class="container">
         <h2 class="section__title section__title--center">Заказчики и партнёры</h2>
-        <div class="partners__strip" aria-label="Названия партнёров (демо)">
-          <span>Инвестхолдинг</span>
-          <span>Горстрой</span>
-          <span>СеверЛог</span>
-          <span>ТехноПарк</span>
-          <span>РегионЖил</span>
+        <div class="partners__strip" aria-label="Названия партнёров">
+          <?php partners_render_strip(partners_get_all(), 5); ?>
         </div>
       </div>
     </section>

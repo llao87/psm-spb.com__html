@@ -15,8 +15,11 @@
  <?php
 $navActive = 'index';
 $footerId = 'contacts';
-require __DIR__ . '/includes/news-data.php';
+require_once __DIR__ . '/includes/functions.php';
 $homeNews = news_get_latest(5);
+$homePartners = partners_get_all();
+$homeReviews = reviews_get_all();
+$homeServices = services_get_featured(3);
 require __DIR__ . '/includes/header.php';
 ?>
 
@@ -106,7 +109,7 @@ require __DIR__ . '/includes/header.php';
       </div>
     </section>
 
-    <section class="section">
+    <section class="section home-about">
       <div class="container">
         <div class="about-split">
           <div class="legal__article about-block about-split__text">
@@ -119,88 +122,6 @@ require __DIR__ . '/includes/header.php';
               <img class="about-split__img" src="images/home-about.jpeg" width="900" height="700" alt="О нас">
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="preview">
-      <div class="container">
-        <header class="section__head section__head--split">
-          <div>
-            <h2 class="section__title">Наши услуги</h2>
-            <p class="section__intro">Проектирование, наружные сети и внутренние системы — подробности на отдельных страницах.</p>
-          </div>
-          <a class="btn btn--ghost" href="/services.php">Все услуги</a>
-        </header>
-        <div class="cards preview__cards">
-          <a class="card card--service card--reveal" href="/service-design.php">
-            <div class="card__media">
-              <img src="/images/design.jpg" width="800" height="500" alt="Инженеры с проектной документацией на строительной площадке" loading="lazy" decoding="async">
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Проектирование и изыскания</h3>
-              <p class="card__text">Обследования, ПД и РД, дизайн-проекты, сметы, генпроектирование.</p>
-            </div>
-          </a>
-          <a class="card card--service card--reveal" href="/service-external-networks.php">
-            <div class="card__media">
-              <img src="/images/vnesh.jpg" width="800" height="500" alt="Инженер в каске на промышленном объекте, инженерные коммуникации" loading="lazy" decoding="async">
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Наружные сети</h3>
-              <p class="card__text">Электроснабжение, связь, теплотрассы, наружное освещение, водопровод и канализация.</p>
-            </div>
-          </a>
-          <a class="card card--service card--reveal" href="/service-mep-internal.php">
-            <div class="card__media">
-              <img src="/images/vnutr.jpg" width="800" height="500" alt="Электромонтаж и слаботочные системы" loading="lazy" decoding="async">
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Внутренние инженерные системы</h3>
-              <p class="card__text">Водоснабжение и канализация, отопление, вентиляция и кондиционирование, СКС, ОПС, СКУД.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section home-portfolio">
-      <div class="container">
-        <header class="section__head section__head--split">
-          <div>
-            <h2 class="section__title">Портфолио</h2>
-            <p class="section__intro">Частные дома, коммерция и госзаказ — примеры реализованных объектов по типам заказчиков.</p>
-          </div>
-          <a class="btn btn--ghost" href="/projects.php">Все проекты</a>
-        </header>
-        <div class="cards">
-          <a class="card card--service card--reveal" href="/projects.php#private">
-            <div class="card__media">
-              <img src="/images/dom.jpg" width="800" height="500" alt="Загородный частный дом" loading="lazy" decoding="async">
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Частные объекты</h3>
-              <p class="card__text">Загородные дома, коттеджи и ремонт жилых помещений «под ключ».</p>
-            </div>
-          </a>
-          <a class="card card--service card--reveal" href="/projects.php#business">
-            <div class="card__media">
-              <img src="/images/otdelka.jpg" width="800" height="500" alt="Коммерческий объект после отделки" loading="lazy" decoding="async">
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Объекты для бизнеса</h3>
-              <p class="card__text">Торговые и офисные пространства, промышленность, фасады и реконструкция.</p>
-            </div>
-          </a>
-          <a class="card card--service card--reveal" href="/projects.php#state">
-            <div class="card__media">
-              <img src="/images/katok.jpg" width="800" height="500" alt="Социальный и муниципальный объект" loading="lazy" decoding="async">
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Гос объекты</h3>
-              <p class="card__text">Социальная инфраструктура, благоустройство и объекты по госзаказу.</p>
-            </div>
-          </a>
         </div>
       </div>
     </section>
@@ -232,18 +153,70 @@ require __DIR__ . '/includes/header.php';
             <dd>услуг в каталоге</dd>
           </div>
         </dl>
-        <!-- <div class="home-hero-metrics__promo hero__panel" aria-hidden="true">
-          <div class="hero__card">
-            <span class="hero__card-label">Фасады и ограждения</span>
-            <span class="hero__card-value">поставка и монтаж</span>
-          </div>
-          <div class="hero__card hero__card--accent">
-            <span class="hero__card-label">Генподряд</span>
-            <span class="hero__card-value">жилые и промышленные объекты</span>
-          </div>
-        </div> -->
       </div>
     </section>
+
+    <section class="preview">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <h2 class="section__title">Наши услуги</h2>
+            <p class="section__intro">Проектирование, наружные сети и внутренние системы — подробности на отдельных страницах.</p>
+          </div>
+          <a class="btn btn--ghost" href="/services.php">Все услуги</a>
+        </header>
+        <div class="cards preview__cards">
+          <?php catalog_render_cards($homeServices, 3); ?>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section home-portfolio">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <h2 class="section__title">Наши объекты</h2>
+            <p class="section__intro">Частные дома, коммерция и госзаказ — примеры реализованных объектов по типам заказчиков.</p>
+          </div>
+          <a class="btn btn--ghost" href="/projects.php">Все проекты</a>
+        </header>
+        <div class="cards">
+          <a class="card card--service card--reveal" href="/projects.php#private">
+            <div class="card__media">
+              <img src="/images/dom.jpg" width="800" height="500" alt="Загородный частный дом" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Частные объекты</h3>
+              <p class="card__text">Загородные дома, коттеджи и ремонт жилых помещений «под ключ».</p>
+            </div>
+          </a>
+          <a class="card card--service card--reveal" href="/projects.php#business">
+            <div class="card__media">
+              <img src="/images/otdelka.jpg" width="800" height="500" alt="Коммерческий объект после отделки" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Объекты для бизнеса</h3>
+              <p class="card__text">Торговые и офисные пространства, промышленность, фасады и реконструкция.</p>
+            </div>
+          </a>
+          <a class="card card--service card--reveal" href="/projects.php#state">
+            <div class="card__media">
+              <img src="/images/katok.jpg" width="800" height="500" alt="Социальный и муниципальный объект" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Государственные объекты</h3>
+              <p class="card__text">Социальная инфраструктура, благоустройство и объекты по госзаказу.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <?php require __DIR__ . '/includes/estimate-form.php'; ?>
+
+    <?php partners_render_home_section($homePartners); ?>
+
+    <?php reviews_render_home_section($homeReviews); ?>
 
     <section class="section">
       <div class="container">
@@ -259,17 +232,7 @@ require __DIR__ . '/includes/header.php';
             <div class="swiper-wrapper">
               <?php foreach ($homeNews as $item): ?>
               <div class="swiper-slide">
-                <a class="teaser card--reveal" href="<?= htmlspecialchars($item['href'], ENT_QUOTES, 'UTF-8') ?>">
-                  <div class="teaser__media">
-                    <img src="<?= htmlspecialchars($item['imageHome'], ENT_QUOTES, 'UTF-8') ?>" width="1024" height="1024" alt="<?= htmlspecialchars($item['imageAlt'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async">
-                  </div>
-                  <div class="teaser__body">
-                    <span class="teaser__label"><?= htmlspecialchars($item['dateHome'] . ' · ' . $item['tag'], ENT_QUOTES, 'UTF-8') ?></span>
-                    <h3 class="teaser__title"><?= htmlspecialchars($item['titleShort'], ENT_QUOTES, 'UTF-8') ?></h3>
-                    <p class="teaser__text"><?= htmlspecialchars($item['teaser'], ENT_QUOTES, 'UTF-8') ?></p>
-                    <span class="teaser__more">Читать</span>
-                  </div>
-                </a>
+                <?php news_render_teaser($item); ?>
               </div>
               <?php endforeach; ?>
             </div>

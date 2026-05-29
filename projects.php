@@ -31,55 +31,15 @@ require __DIR__ . '/includes/header.php';
           <button class="tabs__btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">Все проекты</button>
           <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="private">Частные</button>
           <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="business">Для бизнеса</button>
-          <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="state">Госзаказ</button>
+          <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-filter="state">Государственные объекты</button>
         </div>
         <div class="projects" id="projects">
-          <article class="project" data-cat="business" data-project-id="retail-interior">
-            <button type="button" class="project__preview" aria-haspopup="dialog" aria-label="Открыть фотогалерею: Отделка торговых помещений">
-              <span class="project__visual" aria-hidden="true"></span>
-            </button>
-            <h2 class="project__title">Отделка торговых помещений</h2>
-            <p class="project__meta">Коммерция · СПб</p>
-          </article>
-          <article class="project" data-cat="business state" data-project-id="facade-glass">
-            <button type="button" class="project__preview" aria-haspopup="dialog" aria-label="Открыть фотогалерею: Монтаж фасадных систем остекления">
-              <span class="project__visual project__visual--b" aria-hidden="true"></span>
-            </button>
-            <h2 class="project__title">Монтаж фасадных систем остекления</h2>
-            <p class="project__meta">Фасад · ЛО</p>
-          </article>
-          <article class="project" data-cat="business state" data-project-id="industrial-rebuild">
-            <button type="button" class="project__preview" aria-haspopup="dialog" aria-label="Открыть фотогалерею: Реконструкция производственных корпусов">
-              <span class="project__visual project__visual--c" aria-hidden="true"></span>
-            </button>
-            <h2 class="project__title">Реконструкция производственных корпусов</h2>
-            <p class="project__meta">Промышленность</p>
-          </article>
-          <article class="project" data-cat="state business" data-project-id="film-studio">
-            <button type="button" class="project__preview" aria-haspopup="dialog" aria-label="Открыть фотогалерею: Реконструкция под киностудию">
-              <span class="project__visual project__visual--d" aria-hidden="true"></span>
-            </button>
-            <h2 class="project__title">Реконструкция под киностудию</h2>
-            <p class="project__meta">Креативные индустрии</p>
-          </article>
-          <article class="project" data-cat="business" data-project-id="monolith">
-            <button type="button" class="project__preview" aria-haspopup="dialog" aria-label="Открыть фотогалерею: ЖБ конструкции, ростверки и колонны">
-              <span class="project__visual project__visual--e" aria-hidden="true"></span>
-            </button>
-            <h2 class="project__title">ЖБ конструкции, ростверки и колонны</h2>
-            <p class="project__meta">Монолит</p>
-          </article>
-          <article class="project" data-cat="private" data-project-id="private-house">
-            <button type="button" class="project__preview" aria-haspopup="dialog" aria-label="Открыть фотогалерею: Загородный дом «под ключ»">
-              <span class="project__visual project__visual--f" aria-hidden="true"></span>
-            </button>
-            <h2 class="project__title">Загородный дом «под ключ»</h2>
-            <p class="project__meta">Частный сектор</p>
-          </article>
+          <?php projects_render_grid(projects_get_all()); ?>
         </div>
       </div>
     </section>
   </main>
 
 <?php require __DIR__ . '/includes/estimate-form.php'; ?>
+<?php projects_print_gallery_script(); ?>
 <?php require __DIR__ . '/includes/footer.php'; ?>

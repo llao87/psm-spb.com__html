@@ -1,7 +1,6 @@
 (function () {
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
-  const yearEl = document.getElementById("year");
   const leadForms = document.querySelectorAll("form.js-lead-form");
   const PHONE_MASK = "+7 (999) 999-99-99";
 
@@ -29,10 +28,6 @@
   const pricelistBtn = document.getElementById("pricelistBtn");
   const tabButtons = document.querySelectorAll(".tabs__btn");
   const projects = document.querySelectorAll(".project");
-
-  if (yearEl) {
-    yearEl.textContent = String(new Date().getFullYear());
-  }
 
   function resolveFormToast(anchor) {
     if (!anchor || anchor.nodeType !== 1) return null;
@@ -439,7 +434,117 @@
     apply();
   })();
 
-  /* Home: news carousel (Swiper) — 4 / 3 / 2 / 1 visible, step by 1 */
+  /* Home: partners grid carousel (Swiper) — 3×3 viewport, free scroll, scrollbar */
+  (function initPartnersCarousel() {
+    var root = document.getElementById("partnersCarousel");
+    if (!root || typeof Swiper === "undefined") return;
+
+    var swiperEl = root.querySelector(".partners-carousel__swiper");
+    var scrollbarEl = root.querySelector(".partners-carousel__scrollbar");
+    if (!swiperEl || !scrollbarEl) return;
+
+    new Swiper(swiperEl, {
+      slidesPerView: 3,
+      spaceBetween: 16,
+      grid: {
+        rows: 3,
+        fill: "column",
+      },
+      freeMode: {
+        enabled: true,
+        momentum: true,
+      },
+      scrollbar: {
+        el: scrollbarEl,
+        draggable: true,
+        hide: false,
+      },
+      watchOverflow: true,
+    });
+  })();
+
+  /* Home: reviews carousel (Swiper) — 2 / 1 visible, step by 1 */
+  (function initReviewsCarousel() {
+    var root = document.getElementById("reviewsCarousel");
+    if (!root || typeof Swiper === "undefined") return;
+
+    var swiperEl = root.querySelector(".reviews-carousel__swiper");
+    var prevBtn = root.querySelector(".carousel-controls__btn--prev");
+    var nextBtn = root.querySelector(".carousel-controls__btn--next");
+    if (!swiperEl || !prevBtn || !nextBtn) return;
+
+    new Swiper(swiperEl, {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      grabCursor: true,
+      watchOverflow: true,
+      navigation: {
+        prevEl: prevBtn,
+        nextEl: nextBtn,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+      },
+    });
+  })();
+
+  /* Home: review image lightbox */
+  (function initReviewLightbox() {
+    var modal = document.getElementById("reviewLightbox");
+    var imgEl = document.getElementById("reviewLightboxImg");
+    if (!modal || !imgEl) return;
+
+    var lastFocus = null;
+
+    function closeModal() {
+      if (modal.hidden) return;
+      modal.hidden = true;
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onDocKey);
+      imgEl.removeAttribute("src");
+      imgEl.alt = "";
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus();
+      }
+    }
+
+    function openModal(src, alt) {
+      lastFocus = document.activeElement;
+      imgEl.src = src;
+      imgEl.alt = alt || "";
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onDocKey);
+      modal.querySelector(".review-lightbox__close").focus();
+    }
+
+    function onDocKey(e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeModal();
+      }
+    }
+
+    document.querySelectorAll(".js-review-lightbox").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var src = btn.getAttribute("data-full-src");
+        if (!src) return;
+        var img = btn.querySelector("img");
+        openModal(src, img ? img.getAttribute("alt") || "" : "");
+      });
+    });
+
+    modal.querySelectorAll("[data-review-lb-close]").forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
+  })();
+
+  /* Home: news carousel (Swiper) — 3 / 2 / 1 visible, step by 1 */
   (function initNewsCarousel() {
     var root = document.getElementById("newsCarousel");
     if (!root || typeof Swiper === "undefined") return;
@@ -449,15 +554,12 @@
     var nextBtn = root.querySelector(".carousel-controls__btn--next");
     if (!swiperEl || !prevBtn || !nextBtn) return;
 
-    var newsSwiper = new Swiper(swiperEl, {
+    new Swiper(swiperEl, {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 16,
       grabCursor: true,
       watchOverflow: true,
-      observer: true,
-      observeParents: true,
-      breakpointsBase: "window",
       navigation: {
         prevEl: prevBtn,
         nextEl: nextBtn,
@@ -475,21 +577,6 @@
         },
       },
     });
-
-    var refreshTimer;
-    function refreshNewsSwiperBreakpoints() {
-      clearTimeout(refreshTimer);
-      refreshTimer = setTimeout(function () {
-        newsSwiper.currentBreakpoint = undefined;
-        newsSwiper.update();
-      }, 50);
-    }
-
-    window.addEventListener("resize", refreshNewsSwiperBreakpoints);
-
-    if (typeof ResizeObserver !== "undefined") {
-      new ResizeObserver(refreshNewsSwiperBreakpoints).observe(swiperEl);
-    }
   })();
 
   /* Объекты: попап с галереей, «AJAX» при клике (projects.php) */
@@ -513,80 +600,8 @@
       return;
     }
 
-    /**
-     * Данные «с сервера»: в продакшене пришли бы из JSON ответа.
-     * Сейчас — статический объект, имитирующий тело ответа API.
-     */
-    var SERVER_GALLERY_PAYLOADS = {
-      "retail-interior": {
-        lede: [
-          "Демонстрационный блок с условным описанием: здесь обычно кратко резюмируют объём работ, сроки ввода и ключевые решения по материалам и освещению.",
-          "Второй абзац — рыба для вёрстки: заказчик получил единую линию коммуникации, а фото фиксируют этапы от черновой отделки до финальной сдачи площадки.",
-        ],
-        images: [
-          { url: "https://picsum.photos/seed/psm-retail-1/1600/1000", alt: "Торговое помещение после отделки" },
-          { url: "https://picsum.photos/seed/psm-retail-2/1600/1000", alt: "Монтаж потолочных конструкций" },
-          { url: "https://picsum.photos/seed/psm-retail-3/1600/1000", alt: "Зона касс и проходов" },
-        ],
-      },
-      "facade-glass": {
-        lede: [
-          "Условный текст о проекте: фасадная подсистема согласована с архитектурным обликом здания, узлы вынесены в рабочую документацию и сопровождались авторским надзором.",
-          "Ещё один абзац-рыба: монтаж вёлся поэтапно с учётом погодных окон; на снимках — контроль геометрии и примерочные листы стеклопакетов на площадке.",
-        ],
-        images: [
-          { url: "https://picsum.photos/seed/psm-facade-1/1600/1000", alt: "Фасадное остекление, общий вид" },
-          { url: "https://picsum.photos/seed/psm-facade-2/1600/1000", alt: "Узел крепления профиля" },
-          { url: "https://picsum.photos/seed/psm-facade-3/1600/1000", alt: "Фасад с улицы" },
-          { url: "https://picsum.photos/seed/psm-facade-4/1600/1000", alt: "Этап монтажа стеклопакетов" },
-        ],
-      },
-      "industrial-rebuild": {
-        lede: [
-          "Текст-заглушка: реконструкция корпусов включала усиление несущих конструкций и модернизацию инженерных контуров без полной остановки производственного цикла.",
-          "Второй абзац для макета: подрядчик вёл журнал скрытых работ; фотографии иллюстрируют типовые узлы и готовые участки после приёмки технадзора заказчика.",
-        ],
-        images: [
-          { url: "https://picsum.photos/seed/psm-ind-1/1600/1000", alt: "Корпус после реконструкции" },
-          { url: "https://picsum.photos/seed/psm-ind-2/1600/1000", alt: "Внутренние инженерные коммуникации" },
-          { url: "https://picsum.photos/seed/psm-ind-3/1600/1000", alt: "Производственный цех" },
-        ],
-      },
-      "film-studio": {
-        lede: [
-          "Рыбный вводный абзац: павильон готовился под съёмочный график — акустика, рассеянный свет и трассировка кабельных коробов согласованы с режиссёрской группой.",
-          "Краткое описание для вёрстки: на фото зафиксированы этапы чистовой отделки и монтажа оборудования; итоговое пространство соответствует заданным нормативам по шуму.",
-        ],
-        images: [
-          { url: "https://picsum.photos/seed/psm-film-1/1600/1000", alt: "Павильон, подготовка площадки" },
-          { url: "https://picsum.photos/seed/psm-film-2/1600/1000", alt: "Акустические и световые решения" },
-          { url: "https://picsum.photos/seed/psm-film-3/1600/1000", alt: "Готовое студийное пространство" },
-        ],
-      },
-      monolith: {
-        lede: [
-          "Условный текст: объём монолитных работ включал ростверк, колонны и плиты перекрытия; бетон и арматура поставлялись по согласованному графику с лабораторным контролем.",
-          "Второй абзац-заглушка: на снимках — армирование, опалубка и готовые поверхности; все этапы сопровождались актами и фотофиксацией для исполнительной документации.",
-        ],
-        images: [
-          { url: "https://picsum.photos/seed/psm-mono-1/1600/1000", alt: "Монолитные колонны и ростверк" },
-          { url: "https://picsum.photos/seed/psm-mono-2/1600/1000", alt: "Армирование перед заливкой" },
-          { url: "https://picsum.photos/seed/psm-mono-3/1600/1000", alt: "Плита перекрытия" },
-        ],
-      },
-      "private-house": {
-        lede: [
-          "Демо-описание загородного объекта: проект совмещает жилой блок, инженерию «под ключ» и благоустройство участка; сроки этапов согласовывались с заказчиком письменно.",
-          "Рыбный абзац: интерьерные решения и фасадные материалы подбирались под единую палитру; галерея показывает ход работ и финальный вид с улицы и со двора.",
-        ],
-        images: [
-          { url: "https://picsum.photos/seed/psm-house-1/1600/1000", alt: "Загородный дом, фасад" },
-          { url: "https://picsum.photos/seed/psm-house-2/1600/1000", alt: "Интерьер, отделка" },
-          { url: "https://picsum.photos/seed/psm-house-3/1600/1000", alt: "Участок и благоустройство" },
-          { url: "https://picsum.photos/seed/psm-house-4/1600/1000", alt: "Терраса и входная группа" },
-        ],
-      },
-    };
+    /** Галереи объектов: данные с сервера (projects.php → window.PSM_PROJECT_GALLERIES). */
+    var SERVER_GALLERY_PAYLOADS = window.PSM_PROJECT_GALLERIES || {};
 
     /**
      * Имитация AJAX: задержка сети + объект как у fetch (then → res.json()).
