@@ -2448,15 +2448,25 @@ textarea.lead-form__field {
   object-fit: cover;
 }
 
-/* Review image lightbox */
+/* Review image lightbox — image fills viewport by height (portrait) or width (landscape) */
 .review-lightbox {
+  --review-lb-inset: 1rem;
+  --review-lb-top: 3.25rem;
+  --review-lb-view-w: calc(100vw - 2 * var(--review-lb-inset));
+  --review-lb-view-h: calc(100vh - var(--review-lb-top) - var(--review-lb-inset));
   position: fixed;
   inset: 0;
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0;
+}
+
+@supports (height: 100dvh) {
+  .review-lightbox {
+    --review-lb-view-h: calc(100dvh - var(--review-lb-top) - var(--review-lb-inset));
+  }
 }
 
 .review-lightbox[hidden] {
@@ -2473,30 +2483,34 @@ textarea.lead-form__field {
 .review-lightbox__panel {
   position: relative;
   z-index: 1;
-  width: min(100% - 0.5rem, 52rem);
-  max-height: min(92vh, 48rem);
-  padding: 1rem;
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: 0 1.75rem 5rem rgba(26, 31, 38, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: var(--review-lb-top) var(--review-lb-inset) var(--review-lb-inset);
+  background: transparent;
+  box-shadow: none;
 }
 
 .review-lightbox__close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  position: fixed;
+  top: var(--review-lb-inset);
+  right: var(--review-lb-inset);
   z-index: 2;
   width: 2.5rem;
   height: 2.5rem;
   margin: 0;
   padding: 0;
-  border: 0.0625rem solid var(--line);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.35);
   border-radius: var(--radius-sm);
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--ink);
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
+  box-shadow: 0 0.35rem 1.25rem rgba(26, 31, 38, 0.25);
   transition:
     background 0.2s,
     color 0.2s;
@@ -2509,18 +2523,23 @@ textarea.lead-form__field {
 }
 
 .review-lightbox__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  max-height: min(86vh, 44rem);
-  overflow: auto;
+  max-width: var(--review-lb-view-w);
+  max-height: var(--review-lb-view-h);
 }
 
 .review-lightbox__img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
-  max-height: min(86vh, 44rem);
+  max-width: var(--review-lb-view-w);
+  max-height: var(--review-lb-view-h);
   object-fit: contain;
   border-radius: var(--radius-sm);
+  box-shadow: 0 1.75rem 5rem rgba(26, 31, 38, 0.45);
 }
 
 /* Home news carousel (Swiper): 3 / 2 / 1 visible, step by 1 */
@@ -3090,4 +3109,14 @@ textarea.lead-form__field {
 }
 .partners-carousel .swiper-scrollbar.swiper-scrollbar-horizontal {
   position: relative;
+}
+.section.home-reviews {
+  background-color: var(--deep-dark);
+  color: #fff;
+}
+.section.home-reviews .section__title {
+  color: inherit;
+}
+.section.home-reviews .section__intro {
+  color: inherit;
 }
